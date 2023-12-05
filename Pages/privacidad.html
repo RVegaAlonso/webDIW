@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../main.js"></script>
+    <title>Formulario</title>
+  </head>
+  <body>
+    <div id="navBarra"></div>
+      <body>
+        <h2 class="subtitle">Política de Privacidad</h2>
+
+        <p><strong>Fecha de entrada en vigencia: 04/12/2023</strong></p>
+
+        <p>
+          Bienvenido/a a Punto Juegos ("Nosotros",
+          "Nuestro", o "Nos"). Esta página le informa sobre nuestras políticas
+          con respecto a la recopilación, uso y divulgación de información
+          personal cuando utiliza nuestro servicio.
+        </p>
+
+        <p>
+          Al utilizar nuestro servicio, usted acepta la recopilación y el uso de
+          información de acuerdo con esta política. Si no está de acuerdo con
+          los términos de esta política, por favor absténgase de utilizar
+          nuestro servicio.
+        </p>
+
+        <h2>Información que Recopilamos y Usamos</h2>
+
+        <p><strong>Tipos de Datos Recopilados</strong></p>
+
+        <ul>
+          <li>
+            <strong>Datos Personales:</strong> Mientras utiliza nuestro
+            servicio, podemos solicitarle que nos proporcione cierta información
+            personal identificable que puede incluir, entre otros, su nombre,
+            dirección de correo electrónico, número de teléfono y otra
+            información que podría ser utilizada para identificarlo/a.
+          </li>
+          <li>
+            <strong>Datos de Uso:</strong> También podemos recopilar información
+            sobre cómo se accede y se utiliza nuestro servicio ("Datos de Uso").
+            Estos datos de uso pueden incluir información como la dirección del
+            protocolo de Internet de su computadora (por ejemplo, dirección IP),
+            tipo de navegador, versión del navegador, las páginas de nuestro
+            servicio que visita, la hora y la fecha de su visita, el tiempo
+            dedicado a esas páginas, identificadores de dispositivos y otros
+            datos de diagnóstico.
+          </li>
+        </ul>
+
+        <h2>Uso de Datos</h2>
+
+        <p>
+          Utilizamos los datos recopilados con diversos fines, que incluyen:
+        </p>
+
+        <ul>
+          <li>Proporcionar y mantener nuestro servicio.</li>
+          <li>Notificarle sobre cambios en nuestro servicio.</li>
+          <li>
+            Permitirle participar en funciones interactivas de nuestro servicio
+            cuando elija hacerlo.
+          </li>
+          <li>Proporcionar soporte al cliente.</li>
+          <li>
+            Recopilar análisis o información valiosa para que podamos mejorar
+            nuestro servicio.
+          </li>
+          <li>Controlar el uso de nuestro servicio.</li>
+          <li>Detectar, prevenir y abordar problemas técnicos.</li>
+        </ul>
+
+        <h2>Divulgación de Datos</h2>
+
+        <p>
+          Podemos divulgar información personal por motivos legales y/o para
+          cumplir con obligaciones regulatorias.
+        </p>
+
+        <h2>Seguridad de los Datos</h2>
+
+        <p>
+          La seguridad de sus datos es importante para nosotros, pero recuerde
+          que ningún método de transmisión por Internet o método de
+          almacenamiento electrónico es 100% seguro. Aunque nos esforzamos por
+          utilizar medios comercialmente aceptables para proteger su información
+          personal, no podemos garantizar su seguridad absoluta.
+        </p>
+
+        <h2>Cambios en Esta Política de Privacidad</h2>
+
+        <p>
+          Podemos actualizar nuestra Política de Privacidad de vez en cuando. Le
+          notificaremos de cualquier cambio publicando la nueva Política de
+          Privacidad en esta página.
+        </p>
+
+        <h2>Contacto</h2>
+
+        <p>
+          Si tiene alguna pregunta sobre esta Política de Privacidad,
+          contáctenos en puntojuegos@fakemail.com.
+        </p>
+      </body>
+    </html>
+
+    <div id="footerLocker"></div>
+    <script>
+      function loadAssetsElement(htmlAsset, targetElement) {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", htmlAsset, true);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById(targetElement).innerHTML = xhr.responseText;
+          }
+        };
+        xhr.send();
+      }
+
+      loadAssetsElement("../Templates/footer.html", "footerLocker");
+      loadAssetsElement("../Templates/header.html", "navBarra");
+    </script>
+  </body>
+</html>

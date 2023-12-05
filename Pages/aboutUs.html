@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../main.js"></script>
+    <title>About Us</title>
+</head>
+<body>
+    <div id="navBarra"></div>
+    <h1>Bienvenido a Punto Juegos</h1>
+        <p class="subtitle">Tu destino definitivo para la diversión y la emoción en el mundo de los videojuegos.</p>
+
+        <h2>¿Quiénes Somos?</h2>
+        <p>Somos un grupo de estudiantes de Desarrollo de Aplicaciones Web (DAW) que han unido fuerzas para llevar la magia de los juegos directamente a tu pantalla. Cada uno de nosotros aporta habilidades únicas y una perspectiva fresca al equipo, creando un ambiente dinámico donde la innovación y la diversión son nuestra máxima prioridad.</p>
+
+        <h2>Nuestra Misión</h2>
+        <p>En Punto Juegos, nuestra misión es proporcionarte una escapada digital llena de desafíos emocionantes, narrativas cautivadoras y, sobre todo, diversión sin límites. Nos esforzamos por desarrollar juegos que te sumerjan en mundos virtuales fascinantes y te brinden horas de entretenimiento inigualable.</p>
+
+        <h2>¿Qué Nos Hace Únicos?</h2>
+        <p>Lo que nos distingue es nuestra dedicación para crear experiencias de juego que van más allá de lo ordinario. Cada juego que creamos refleja la pasión y el ingenio de un equipo comprometido con la excelencia. Nos encanta experimentar con nuevas ideas, mecánicas de juego innovadoras y gráficos cautivadores para ofrecerte lo mejor en entretenimiento interactivo.</p>
+
+        <h2>Únete a Nosotros en esta Aventura</h2>
+        <p>Estamos emocionados de compartir nuestro viaje contigo. Ya sea que seas un jugador ocasional, un entusiasta de los juegos o simplemente estés buscando una nueva forma de escapar de la rutina diaria, Punto Juegos es tu destino para descubrir y disfrutar de emocionantes juegos web.</p>
+
+        <p>Gracias por ser parte de nuestra comunidad. ¡Prepárate para jugar, explorar y sumergirte en el increíble mundo de Punto Juegos!</p>
+
+        <p>¡Vamos juntos a la próxima aventura!</p>
+
+        <p>El Equipo de Punto Juegos<br>Estudiantes de 2º de DAW</p>
+    <div id="footerLocker"></div>
+      <script>
+        function loadAssetsElement(htmlAsset, targetElement) {
+          const xhr = new XMLHttpRequest();
+          xhr.open('GET', htmlAsset, true);
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              document.getElementById(targetElement).innerHTML = xhr.responseText;
+            }
+          };
+        xhr.send();
+        }
+
+loadAssetsElement('../Templates/footer.html','footerLocker')
+loadAssetsElement('../Templates/header.html','navBarra')
+      </script>
+</body>
+</html>

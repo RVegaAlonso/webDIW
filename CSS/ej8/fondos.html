@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <title>Fondos</title>
+  </head>
+  <body onload="randombg()">
+    <div id="navBarra"></div>
+    <div class="centrar">
+    <div id="random"></div>
+  </body>
+  <button class="buttonfondo" onclick="randombg()">Cambiar fondo</button>
+</div>
+  <div id="footerLocker"></div>
+  <script>
+    function randombg() {
+      var random = Math.floor(Math.random() * 6) + 0;
+      var bigSize = [
+        "url('../../Media/1.svg')",
+        "url('../../Media/2.svg')",
+        "url('../../Media/3.svg')",
+        "url('../../Media/4.svg')",
+        "url('../../Media/5.svg')",
+        "url('../../Media/6.svg')",
+      ];
+      document.getElementById("random").style.backgroundImage = bigSize[random];
+    }
+
+    function loadAssetsElement(htmlAsset, targetElement) {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", htmlAsset, true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          document.getElementById(targetElement).innerHTML = xhr.responseText;
+        }
+      };
+      xhr.send();
+    }
+
+    loadAssetsElement("../../Templates/footer.html", "footerLocker");
+    loadAssetsElement("../../Templates/header.html", "navBarra");
+  </script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <title>Punto Juegos</title>
+  </head>
+  <body>
+      <div id="navBarra"></div>
+      <div class="cosa">
+            <div class="boxel caja-1">a</div>
+            <div class="boxel caja-2">a</div>
+            <div class="boxel caja-3">a</div>
+        </div>
+        <div class="espacio"></div>
+      <div id="footerLocker"></div>
+    </div>
+</div>
+  </body>
+  <script>
+    function loadAssetsElement(htmlAsset, targetElement) {
+
+const xhr = new XMLHttpRequest();
+xhr.open('GET', htmlAsset, true);
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        document.getElementById(targetElement).innerHTML = xhr.responseText;
+    }
+};
+xhr.send();
+}
+
+loadAssetsElement('../../Templates/footer.html','footerLocker')
+loadAssetsElement('../../Templates/header.html','navBarra')
+  </script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../main.js"></script>
+    <title>About Us</title>
+  </head>
+  <body>
+    <div id="navBarra"></div>
+
+    <video id="myVideo" class="video" controls>
+      <source src="tu_video.mp4" type="video/mp4" />
+      Tu navegador no soporta el elemento de video.
+    </video>
+
+    <br />
+
+    <button class="buttonfondo" id="playPauseBtn">Pausar</button>
+
+    <input
+      type="range"
+      id="volumeSlider"
+      min="0"
+      max="1"
+      step="0.1"
+      value="1"
+    />
+
+    <div id="footerLocker"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const video = document.getElementById("myVideo");
+        const playPauseBtn = document.getElementById("playPauseBtn");
+        const volumeSlider = document.getElementById("volumeSlider");
+
+        playPauseBtn.addEventListener("click", function () {
+          if (video.paused) {
+            video.play();
+            playPauseBtn.textContent = "Pausar";
+          } else {
+            video.pause();
+            playPauseBtn.textContent = "Reanudar";
+          }
+        });
+
+        volumeSlider.addEventListener("input", function () {
+          video.volume = volumeSlider.value;
+        });
+      });
+
+      function loadAssetsElement(htmlAsset, targetElement) {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", htmlAsset, true);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById(targetElement).innerHTML = xhr.responseText;
+          }
+        };
+        xhr.send();
+      }
+
+      loadAssetsElement("../Templates/footer.html", "footerLocker");
+      loadAssetsElement("../Templates/header.html", "navBarra");
+    </script>
+  </body>
+</html>

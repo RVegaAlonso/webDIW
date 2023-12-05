@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles.css">
+    <script src="main.js"></script>
+    <title>Esferas</title>
+</head>
+<body>
+    <div id="navBarra"></div>
+    <canvas id="canvas1" class="canvas-style" width="800px" height="800px"></canvas>
+    <form>
+        <input type="range" min="1" max="100" value="50" class="slider" id="speed">
+    </form>
+    <div id="footerLocker"></div>
+    <script>
+      function loadAssetsElement(htmlAsset, targetElement) {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", htmlAsset, true);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById(targetElement).innerHTML = xhr.responseText;
+          }
+        };
+        xhr.send();
+      }
+      loadAssetsElement("../../Templates/footer.html", "footerLocker");
+      loadAssetsElement("../../Templates/header.html", "navBarra");
+    </script>
+</body>
+</html>

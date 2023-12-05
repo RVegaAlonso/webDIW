@@ -1,0 +1,445 @@
+/*
+*Estilos canvas y relacionados
+*/
+
+.canvas-style{
+  background-color: black;
+  margin-left: 35%;
+}
+
+.canvas-tank{
+  background-color: rgb(92, 184, 0);
+  margin-left: 30%;
+}
+
+#speed{
+ margin-left: 50%;
+}
+
+/*
+*Modificaciones generales
+*/
+
+*{
+  font-family: 'Georgia', serif;
+}
+
+body{
+    background-color:#1B262C;
+    background-size: 100%;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    color: #BBE1FA;
+}
+
+h2{
+	color:#3282B8;
+	padding-left: 5%;
+}
+
+p{
+	width: 80%;
+	color: #135a8a;
+	padding-left: 5%;
+}
+
+.subtitle {
+  color: #BBE1FA;
+  margin-left: 30%;
+}
+
+/*
+*Side bar
+*/
+
+.sidebar {
+    background-color: #27363f;
+    width: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.sidebar h1 {
+    color: #BBE1FA;
+}
+
+.portfolio {
+	  background-color:#1B262C;
+    position: absolute;
+    top: 0;
+    left: 150px;
+    right: 0;
+    bottom: 0;
+    
+    -moz-transition: left 0.5s ease;
+    transition: left 0.5s ease;
+}
+
+input[type=checkbox] {
+   display: none;
+}
+
+input:checked ~ .portfolio { 
+    left: 0;
+}
+
+input:checked ~ label {
+    left: 0;
+}
+
+label {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 150px;
+    background-color: #3282B8;
+    
+    -moz-transition: left 0.5s ease;
+    transition: left 0.5s ease;
+}
+
+
+/*
+*Quick menu
+*/
+
+#quickmenu{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+/*
+*Busca y modifica los elementos dentro del nav que tiene la id Primary Nav Wrap
+*/
+
+#primary_nav_wrap{
+	margin-top:15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#primary_nav_wrap ul{
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+  z-index: 10;
+}
+
+#primary_nav_wrap ul a{
+	display:block;
+	color:#3282B8;
+	text-decoration:none;
+	font-weight:700;
+	font-size:12px;
+	line-height:32px;
+	padding:0 45px;
+}
+
+#primary_nav_wrap ul li{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#primary_nav_wrap ul li:hover{
+	background:#323232
+}
+
+#primary_nav_wrap ul ul{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#1e1e1e;
+	padding:0
+}
+
+#primary_nav_wrap ul ul li{
+	float:none;
+	width:200px
+}
+
+#primary_nav_wrap ul ul a{
+	line-height:120%;
+	padding:10px 15px
+}
+
+#primary_nav_wrap ul ul ul{
+	top:0;
+	left:100%
+}
+
+#primary_nav_wrap ul li:hover > ul{
+	display:block
+}
+
+.superior{
+  z-index: 10;
+}
+
+/*
+*footer
+*/
+
+.site-footer
+{
+  background-color: #000000;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+
+.site-footer .row{
+	display: flex;
+	justify-content: space-evenly;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+
+.text-justify{
+	width: 45%;
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#BBE1FA;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:20px;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+
+
+/*
+*Log in menu
+*/
+
+:root{
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+
+.hero-section{
+  border-radius: 10%;
+  align-items: flex-start;
+  background-image: linear-gradient(15deg, #0f4667 0%, #2a6973 150%);
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+
+.card{
+  list-style: none;
+  position: relative;
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  transform: scale(1) translateZ(0);
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+
+/*
+    Estilos del ejercicio 1 
+*/
+
+.boxel{
+  position: absolute;
+  width: 300px;
+  padding: 20px;
+  border: 5px solid black;
+}
+
+.caja-1{
+  top: 160px;
+  left:170px;
+  background-color: yellow !important;
+  z-index: 1;
+}
+
+.caja-2{
+  top: 200px;
+  left: 220px;
+  background-color: rgb(255, 0, 0) !important;
+  z-index: 2;
+}
+
+.caja-3{
+  top: 240px;
+  left: 270px;
+  background-color: rgb(0, 0, 255) !important;
+  z-index: 3;
+}
+
+.espacio{
+  padding: 8%;
+}
+
+/*
+  Ejercicio 8
+*/
+
+#random{
+  width: 100%;
+  height: 450px;
+  border: 1px solid black;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  background-image: url('http://placehold.it/300&text=banner1');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;  
+}
+
+.buttonfondo {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.buttonfondo:hover {
+  background-color: #2980b9;
+}
+
+.centrar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  Videoi
+*/
+
+video {
+  width: 80%;
+  margin-left: 10%;
+}
